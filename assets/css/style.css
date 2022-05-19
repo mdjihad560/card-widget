@@ -1,0 +1,172 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap');
+
+body {
+    font-size: 15px;
+    line-height: 1.6;
+    background-color: #fff;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    word-break: normal;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Mulish', sans-serif;
+    color: #7F92A3;
+}
+
+a,
+a:active,
+a:focus,
+a:active {
+    color: #222222;
+    text-decoration: none !important
+}
+
+input {
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a:hover,
+a:focus,
+input:focus,
+input:hover,
+select:focus,
+select:hover,
+select:active,
+textarea:focus,
+textarea:hover,
+button:focus {
+    outline: none;
+}
+
+
+img {
+    -ms-interpolation-mode: bicubic;
+    border: 0;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    color: #092C4C;
+    font-weight: 700;
+    font-family: 'Mulish', sans-serif;
+}
+
+h4,
+.h4 {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+p:last-child {
+    margin: 0;
+}
+
+
+
+/*---------------------------------------------------
+HOME PAGE STYLESHEET 
+----------------------------------------------------*/
+.card-item{
+    position: relative;
+    margin-bottom: 30px;
+    border: 1px solid #F8F8F8;
+    background-color: #fff;
+    transition: all 0.4s;
+}
+.card-thumb img{
+    width: 100%;
+    height: 230px;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: center top;
+    position: relative;
+}
+
+
+.card-data {
+    background: #FFFFFF;
+    border-radius: 3px;
+    position: absolute;
+    width: calc(100% - 70px);
+    text-align: center;
+    margin-left: 35px;
+    margin-right: 35px;
+    bottom: -30px;
+    box-shadow: 0px 15px 50px rgb(0 0 0 / 5%);
+    padding: 40px 20px 20px;
+    transition: all 0.4s;
+    border-radius: 5px;
+}
+.card-data h4{
+    transition: all 0.4s;
+}
+.card-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    color: #fff;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    background-color: blue;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -30px;
+    transition: all 0.4s;
+}
+/* .card-icon:before{
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    content: '';
+    box-shadow: 0 0 0 3px red;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 300ms;
+} */
+.card-item:hover .card-icon {
+    background-color: red;
+}
+.card-data h4{
+    margin: 0;
+}
+
+/* .card-item:hover .card-icon:before {
+    opacity: 1;
+    transform: scale(1.15);
+} */
