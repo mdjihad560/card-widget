@@ -329,16 +329,27 @@ class Elementor_Card_Widget extends \Elementor\Widget_Base {
 			);
 
 			$this->add_control(
-				'icon_Hover_color',
+				'icon_hover_fill_color',
 				[
 					'label' => esc_html__( 'Color', 'card-addon' ),
 					'type' => \Elementor\Controls_Manager::COLOR,
 					'selectors' => [
-						'{{WRAPPER}} .card-item:hover .card-icon' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .card-item:hover .card-icon i' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .card-item:hover .card-icon path' => 'fill: {{VALUE}}',
 					],
 				]
 			);
 
+			$this->add_control(
+				'icon_hover_stroke_color',
+				[
+					'label' => esc_html__( 'Stroke Color', 'card-addon' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .card-item:hover .card-icon path' => 'stroke: {{VALUE}}',
+					],
+				]
+			);
 			$this->add_group_control(
 				\Elementor\Group_Control_Box_Shadow::get_type(),
 				[
