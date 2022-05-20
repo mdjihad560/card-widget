@@ -71,7 +71,6 @@ class Elementor_Card_Widget extends \Elementor\Widget_Base {
 				],
 			]
 		);
-
 		// card name
 		$this->add_control(
 			'card_name',
@@ -80,6 +79,18 @@ class Elementor_Card_Widget extends \Elementor\Widget_Base {
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'default' => esc_html__( 'Name', 'card-addon' ),
 				'placeholder' => esc_html__( 'Type your title here', 'card-addon' ),
+			]
+		);
+
+		$this->add_control(
+			'card_icon_hide',
+			[
+				'label' => esc_html__( 'Social Hide?', 'simple-team-addon' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'simple-team-addon' ),
+				'label_off' => esc_html__( 'Hide', 'simple-team-addon' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
 			]
 		);
 
@@ -516,6 +527,7 @@ class Elementor_Card_Widget extends \Elementor\Widget_Base {
 		$card_image = $settings['card_image'];
 		$card_icon = $settings['card_icon'];
 		$card_name = $settings['card_name'];
+		$card_icon_hide = $settings['card_icon_hide'];
 
 		switch($card_layout){
 			case 'card-style1':
