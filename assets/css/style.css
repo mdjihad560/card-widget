@@ -159,7 +159,3 @@ HOME PAGE STYLESHEET
     -webkit-transform: rotate3d(1, 1, 1, 360deg);
     transform: translateX(-50%) rotate3d(1, 1, 1, 360deg);
 }
-.card-item:hover .card-icon.icon-style2{
-    -webkit-transform: rotate3d(1, 1, 1, 360deg);
-    transform: translateX(-50%) rotate3d(1, 1, 1, 360deg);
-}

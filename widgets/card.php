@@ -35,18 +35,6 @@ class Elementor_Card_Widget extends \Elementor\Widget_Base {
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
-		// team layout
-		$this->add_control(
-			'card_layout',
-			[
-				'label' => esc_html__( 'Select Layout', 'card-addon' ),
-				'type' => \Elementor\Controls_Manager::SELECT,
-				'default' => 'card-style1',
-				'options' => [
-					'card-style1'  => esc_html__( 'Card Style 1', 'card-addon' ),
-				],
-			]
-		);
 
 		// Team Image
 		$this->add_control(
@@ -215,10 +203,10 @@ class Elementor_Card_Widget extends \Elementor\Widget_Base {
 				[
 					'label' => esc_html__( 'Select Icon Style', 'card-addon' ),
 					'type' => \Elementor\Controls_Manager::SELECT,
-					'default' => 'icon-style1',
+					'default' => 'icon-default',
 					'options' => [
+						'icon-default'  => esc_html__( 'Default', 'card-addon' ),
 						'icon-style1'  => esc_html__( 'Icon Style 1', 'card-addon' ),
-						'icon-style2'  => esc_html__( 'Icon Style 2', 'card-addon' ),
 					],
 				]
 			);
@@ -536,21 +524,31 @@ class Elementor_Card_Widget extends \Elementor\Widget_Base {
 
   protected function render() {
     $settings = $this->get_settings_for_display();
-		$card_layout = $settings['card_layout'];
 		$card_image = $settings['card_image'];
 		$card_icon = $settings['card_icon'];
 		$card_name = $settings['card_name'];
 		$card_icon_hide = $settings['card_icon_hide'];
 		$icon_style_layout = $settings['icon_style_layout'];
 
-
-		switch($card_layout){
-			case 'card-style1':
-				include( __DIR__ . '/parts/card-style1.php' );
-				break;
-        default:
-				include( __DIR__ . '/parts/card-style1.php' );
-    	}
+		?>
+		<div class="card-item">
+				<div class="card-thumb">
+					<img src="<?php echo esc_url($card_image['url'])?>" alt="">
+							<?php if (($card_name) || ($card_icon)) : ?>
+									<div class="card-data">
+											<?php if($card_icon_hide == 'yes') : ?>
+													<div class="card-icon <?php echo $icon_style_layout ?>">
+															<?php \Elementor\Icons_Manager::render_icon($card_icon, ['aria-hidden' => 'true']);?>
+													</div>
+											<?php endif;?>
+											<?php if($card_name) : ?>
+													<h4><?php echo esc_html($card_name)?></h4>
+											<?php endif;?>
+									</div>
+							<?php endif;?>
+					</div>
+			</div>
+		<?php
 		}
 }
 
