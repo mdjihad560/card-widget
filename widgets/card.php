@@ -209,6 +209,19 @@ class Elementor_Card_Widget extends \Elementor\Widget_Base {
 			$this->start_controls_tabs(
 				'icon_style_tabs'
 			);
+
+			$this->add_control(
+				'icon_style_layout',
+				[
+					'label' => esc_html__( 'Select Icon Style', 'card-addon' ),
+					'type' => \Elementor\Controls_Manager::SELECT,
+					'default' => 'icon-style1',
+					'options' => [
+						'icon-style1'  => esc_html__( 'Icon Style 1', 'card-addon' ),
+						'icon-style2'  => esc_html__( 'Icon Style 2', 'card-addon' ),
+					],
+				]
+			);
 	
 			$this->start_controls_tab(
 				'icon_style_normal_tab',
@@ -528,6 +541,8 @@ class Elementor_Card_Widget extends \Elementor\Widget_Base {
 		$card_icon = $settings['card_icon'];
 		$card_name = $settings['card_name'];
 		$card_icon_hide = $settings['card_icon_hide'];
+		$icon_style_layout = $settings['icon_style_layout'];
+
 
 		switch($card_layout){
 			case 'card-style1':
@@ -535,8 +550,7 @@ class Elementor_Card_Widget extends \Elementor\Widget_Base {
 				break;
         default:
 				include( __DIR__ . '/parts/card-style1.php' );
-    }
-
+    	}
 		}
 }
 

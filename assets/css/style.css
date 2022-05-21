@@ -144,29 +144,22 @@ HOME PAGE STYLESHEET
     left: 50%;
     transform: translateX(-50%);
     top: -30px;
-    transition: all 0.4s;
+    -webkit-transition: all .35s;
+    transition: all .35s;
 }
-/* .card-icon:before{
-    pointer-events: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    content: '';
-    box-shadow: 0 0 0 3px red;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: 300ms;
-} */
 .card-item:hover .card-icon {
+    left: 50%;
     background-color: red;
 }
 .card-data h4{
     margin: 0;
 }
 
-/* .card-item:hover .card-icon:before {
-    opacity: 1;
-    transform: scale(1.15);
-} */
+.card-item:hover .card-icon.icon-style1{
+    -webkit-transform: rotate3d(1, 1, 1, 360deg);
+    transform: translateX(-50%) rotate3d(1, 1, 1, 360deg);
+}
+.card-item:hover .card-icon.icon-style2{
+    -webkit-transform: rotate3d(1, 1, 1, 360deg);
+    transform: translateX(-50%) rotate3d(1, 1, 1, 360deg);
+}

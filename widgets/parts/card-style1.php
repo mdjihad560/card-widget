@@ -4,7 +4,7 @@
         <?php if (($card_name) || ($card_icon)) : ?>
             <div class="card-data">
                 <?php if($card_icon_hide == 'yes') : ?>
-                    <div class="card-icon">
+                    <div class="card-icon <?php echo $icon_style_layout ?>">
                         <?php \Elementor\Icons_Manager::render_icon($card_icon, ['aria-hidden' => 'true']);?>
                     </div>
                 <?php endif;?>

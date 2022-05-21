@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Card Widget
+ * Plugin Name: Card Widgets
  * Description: Custom Elementor extension which includes custom widgets.
  * Plugin URI:  https://inspiring-blackwell-e49ce4.netlify.app/samples-team-widget/
  * Version:     1.0.0
